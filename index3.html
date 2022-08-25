@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+</head>
+<!-- <style>
+    body{
+        background-image: url("afreen123.jpg");
+    }
+</style> -->
+<body>
+    <center>
+     <div class="container">
+<h1><i>Table Data</i></h1>
+
+<form method="POST" name="sample">
+<br>
+    <i style="font-size: 25px";>First Name:</i> <input type="fname" name="fname" id="app" required> 
+    <i style="font-size: 25px";>Last Name:</i> <input type="name" name="name" id="app" required>
+    <br><br>
+    <input type="button" name="add" value="Add Data" onclick="addStudent();" class="btn btn-success" id="button"><hr>
+
+            <table id="tbl" class="table" border="1">
+                <thead id="thd">
+                <th>First Name</th> 
+                <th> Last Name</th>
+                <th> Delete</th>
+            
+               
+                </thead>
+                
+                 <tbody>
+                     
+                 </tbody>
+             </table>
+
+</form>
+</center>
+
+ <script type="text/javascript">
+       
+    function addStudent()
+    { 
+        var fname=document.sample.fname.value; 
+        var name=document.sample.name.value; 
+        
+        var tr = document.createElement('tr');
+        
+        var td1 = tr.appendChild(document.createElement('td'));
+        var td2 = tr.appendChild(document.createElement('td'));
+        var td3 = tr.appendChild(document.createElement('td'));
+        
+        
+        td1.innerHTML=fname;
+        td2.innerHTML=name;
+        td3.innerHTML='<input type="button" name="del" value="Delete" onclick="delStudent(this);" class="btn btn-danger" id="dele">'
+
+
+        document.getElementById("tbl").appendChild(tr);
+    }
+
+    function delStudent(Stud){
+        var s=Stud.parentNode.parentNode;
+        s.parentNode.removeChild(s);
+    }
+    
+    
+    </script>
+</div>
+    </body>
+</html>
+
